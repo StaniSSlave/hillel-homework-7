@@ -108,8 +108,8 @@ while task_n != 3:
                         except Exception as e:
                             print(f"\tError: {e}")
             case 3:
-                finish_t2_l = "y"
-                while finish_t2_l == "y":
+                finish_t3_l = "y"
+                while finish_t3_l == "y":
 
                     def sum_of_nums_in_range(num1, num2):
                         if num1 > num2:
@@ -127,15 +127,15 @@ while task_n != 3:
                     # ...
                     # sum_of_nums_in_range(first_number) => first_number
 
-                    while finish_t2_l != "y" or finish_t2_l != "n":
+                    while finish_t3_l != "y" or finish_t3_l != "n":
                         finish_t2 = input("Do you want to continue?\n"
                                           "\ty - yes, n - no\n"
                                           "\tEnter your choice: ")
-                        finish_t2_l = finish_t2.lower()
+                        finish_t3_l = finish_t3_l.lower()
                         try:
-                            if finish_t2_l == "y":
+                            if finish_t3_l == "y":
                                 break
-                            elif finish_t2_l == "n":
+                            elif finish_t3_l == "n":
                                 break
                             else:
                                 raise Exception("Please enter valid answer!")
