@@ -37,7 +37,7 @@ while task_n != 3:
         task_n = int(input("Select please task number, that you want to check: \n"
                            "\t1. Написати рекурсивну функцію знаходження ступеня числа.\n"
                            "\t2. Написати рекурсивну функцію, яка виводить N зірок у ряд, число N задає користувач.\n"
-                           "\t3. Написати рекурсивну функцію, яка обчислює суму всіх чисел у діапазоні від a до b."
+                           "\t3. Написати рекурсивну функцію, яка обчислює суму всіх чисел у діапазоні від a до b.\n"
                            "\t4. Stop checking tasks\n"
                            "Enter choise here: "))
 
@@ -112,9 +112,20 @@ while task_n != 3:
                 while finish_t2_l == "y":
 
                     def sum_of_nums_in_range(num1, num2):
+                        if num1 > num2:
+                            num1, num2 = num2, num1
 
+                        if num2 == num1:
+                            return num1
+                        return num2 + sum_of_nums_in_range(num1, num2 - 1)
 
-                    first_number, second_munber = int(import("Enter here first number of range: ")), int(import("Enter here second number of range: "))
+                    first_number, second_munber = int(input("Enter here first number of range: ")), int(input("Enter here second number of range: "))
+                    print(f"Here is the sum of sumbers: {sum_of_nums_in_range(first_number, second_munber)}")
+
+                    # sum_of_nums_in_range(first_number, second_munber) -> second_munber + sum_of_nums_in_range(first_number, second_munber-1)
+                    # sum_of_nums_in_range(first_number, second_munber-1) -> second_munber + sum_of_nums_in_range(first_number, second_munber-2)
+                    # ...
+                    # sum_of_nums_in_range(first_number) => first_number
 
                     while finish_t2_l != "y" or finish_t2_l != "n":
                         finish_t2 = input("Do you want to continue?\n"
