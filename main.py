@@ -79,6 +79,19 @@ while task_n != 3:
                 finish_t2_l = "y"
                 while finish_t2_l == "y":
 
+                    def print_stars(number):
+                        if number == 1:
+                            return "*"
+
+                        return "*" + print_stars(number - 1)
+
+                    number_of_stars = int(input("Enter here number of stars, that you want to see: "))
+                    print(print_stars(number_of_stars))
+
+                    # print_stars(number_of_stars) -> "*" + print_stars(number_of_stars-1)
+                    # print_stars(number_of_stars-1) -> "*" + print_stars(number_of_stars-2)
+                    # ...
+                    # print_stars(1) => "*"
 
                     while finish_t2_l != "y" or finish_t2_l != "n":
                         finish_t2 = input("Do you want to continue?\n"
